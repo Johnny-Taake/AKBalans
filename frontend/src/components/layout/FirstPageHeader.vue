@@ -4,8 +4,8 @@ import { ref, computed, onMounted, onBeforeUnmount, nextTick } from "vue";
 type NavItem = { label: string; target: string };
 const items: NavItem[] = [
   { label: "о компании", target: "#about" },
-  { label: "преимущества", target: "#advantages" },
   { label: "услуги", target: "#services" },
+  { label: "преимущества", target: "#advantages" },
   { label: "отзывы", target: "#reviews" },
   { label: "FAQ", target: "#faq" },
   { label: "контакты", target: "#contacts" },
