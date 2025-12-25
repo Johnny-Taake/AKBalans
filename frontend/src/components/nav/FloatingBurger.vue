@@ -93,13 +93,14 @@ const shouldShow = computed(() => {
 </template>
 
 <style scoped>
-.burger-button{
+.burger-button {
   position: fixed;
   top: max(2.5rem, env(safe-area-inset-top));
   right: max(1.5rem, env(safe-area-inset-right));
 }
-@media (min-width:1050px){
-  .burger-button{
+
+@media (min-width:1050px) {
+  .burger-button {
     top: max(3rem, env(safe-area-inset-top));
     right: max(3rem, env(safe-area-inset-right));
   }
