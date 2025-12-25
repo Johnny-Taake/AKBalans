@@ -9,12 +9,7 @@ import { isValidEmail } from "@/utils/email";
   <section class="contacts-section">
     <div class="contacts container">
       <div class="contacts__map">
-        <YandexMap
-          :width="'100%'"
-          :height="'var(--contacts-map-h)'"
-          :controls="['zoomControl']"
-          :openBalloon="false"
-        />
+        <YandexMap :width="'100%'" :height="'var(--contacts-map-h)'" :controls="['zoomControl']" :openBalloon="false" />
       </div>
 
       <div class="contacts__content">
@@ -30,11 +25,7 @@ import { isValidEmail } from "@/utils/email";
         <div class="contacts__row">
           <div class="contacts__label">E-MAIL:</div>
           <div class="contacts__value">
-            <a
-              v-if="isValidEmail(CONTACTS.email)"
-              class="contacts__link"
-              :href="`mailto:${CONTACTS.email}`"
-            >
+            <a v-if="isValidEmail(CONTACTS.email)" class="contacts__link" :href="`mailto:${CONTACTS.email}`">
               {{ CONTACTS.email }}
             </a>
           </div>
@@ -44,11 +35,7 @@ import { isValidEmail } from "@/utils/email";
           <div class="contacts__label">ТЕЛЕФОН:</div>
           <div class="contacts__value contacts__phones">
             <template v-for="phone in CONTACTS.phones" :key="phone">
-              <a
-                v-if="isValidPhone(phone)"
-                class="contacts__link"
-                :href="`tel:${formatPhone(phone)}`"
-              >
+              <a v-if="isValidPhone(phone)" class="contacts__link" :href="`tel:${formatPhone(phone)}`">
                 {{ phone }}
               </a>
             </template>
@@ -84,7 +71,7 @@ import { isValidEmail } from "@/utils/email";
   padding-bottom: 2rem;
 }
 
-.contacts > * {
+.contacts>* {
   min-width: 0;
 }
 
@@ -92,22 +79,25 @@ import { isValidEmail } from "@/utils/email";
   background: var(--white);
   touch-action: none;
   width: 100%;
+  height: var(--contacts-map-h);
   overflow: hidden;
 }
 
-.contacts__map :deep(> *) {
-  height: clamp(260px, 40vh, 420px) !important;
+.contacts__map :deep(.ymap-wrap) {
+  height: var(--contacts-map-h);
 }
 
-@media (min-width: 801px) {
-  .contacts__map :deep(> *) {
-    height: clamp(420px, 55vh, 580px) !important;
-  }
+.contacts__map :deep(.ymap-box) {
+  height: var(--contacts-map-h) !important;
 }
 
 .contacts__content {
   grid-area: content;
   min-width: 0;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-bottom: 12px;
 }
 
 @media (max-width: 800px) {
@@ -177,7 +167,7 @@ import { isValidEmail } from "@/utils/email";
 
 .contacts__tagline {
   padding-bottom: 2rem;
-  padding-top: 2rem;
+  padding-top: 1rem;
   text-align: center;
   letter-spacing: 0.04em;
   opacity: 0.9;
@@ -186,12 +176,18 @@ import { isValidEmail } from "@/utils/email";
 
 @media (min-width: 801px) {
   .contacts-section {
-    min-height: 100svh;
+    height: 100svh;
+    min-height: unset;
+
     display: grid;
-    grid-template-rows: 1fr auto;
+    grid-template-rows: 1fr var(--contacts-tagline-h);
+
+    --contacts-map-h: 100%;
+    --contacts-tagline-h: clamp(56px, 10vh, 120px);
   }
 
   .contacts {
+    height: 100%;
     align-items: stretch;
     padding-bottom: 0;
     min-height: 0;
@@ -200,16 +196,26 @@ import { isValidEmail } from "@/utils/email";
   .contacts__map {
     height: 100%;
     min-height: 0;
-    --contacts-map-h: 100%;
   }
 
-  .contacts__map :deep(> *) {
+  .contacts__map :deep(.ymap-wrap) {
+    height: 100%;
+  }
+
+  .contacts__map :deep(.ymap-box) {
     height: 100% !important;
   }
 
   .contacts__tagline {
-    align-self: end;
-    margin-top: 0;
+    height: auto;
+    min-height: var(--contacts-tagline-h);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: clamp(22px, 3vw, 52px);
   }
 
   .contacts__row {

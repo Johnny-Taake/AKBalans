@@ -75,6 +75,11 @@ const mapBoxStyle = computed(() => ({
 }))
 
 const calculateHeight = () => {
+  if (typeof props.height === 'string' && props.height.includes('var(')) {
+    mapHeight.value = props.height
+    return
+  }
+
   if (typeof window === 'undefined') return
   if (window.innerWidth <= 600) {
     const h = Math.min(Math.max(220, Math.round(window.innerHeight * 0.48)), 320)

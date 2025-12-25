@@ -231,7 +231,6 @@ const {
   handleSubmitError,
 } = useContactForm();
 
-const openBtnRef = ref<HTMLButtonElement | null>(null);
 const firstFieldRef = ref<HTMLInputElement | null>(null);
 
 const cssVars = computed(() => ({
