@@ -55,10 +55,12 @@ const handleKeyDown = (e: KeyboardEvent) => {
 
   switch (e.key) {
     case 'ArrowDown':
+    case 'PageDown':
       e.preventDefault()
       scrollToSection('next')
       break
     case 'ArrowUp':
+    case 'PageUp':
       e.preventDefault()
       scrollToSection('prev')
       break
