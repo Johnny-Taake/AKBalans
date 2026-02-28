@@ -1,6 +1,6 @@
 # AK Balans  
 
-Commercial web application with a Vue 3 frontend and a lightweight SMTP-enabled backend.
+Commercial web application with a Vue 3 frontend and a lightweight Rust SMTP-enabled backend.
 
 To inspect outgoing emails locally, create the file:
 
