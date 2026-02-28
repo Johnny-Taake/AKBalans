@@ -1,4 +1,4 @@
-# Vue 3 + TypeScript + Vite + SMTP Backend
+# AK Balans  
 
 Commercial web application with a Vue 3 frontend and a lightweight SMTP-enabled backend.
 
