@@ -3,7 +3,7 @@
     <div class="container">
       <div class="faq__inner">
         <h2 class="faq__title h1 title-wrap mb-10" :style="{ color: 'var(--white)' }">
-          FAQ
+          ОТВЕТЫ
         </h2>
         <div class="faq__list">
           <article v-for="(item, i) in items" :key="i" class="faq__item" :ref="el => setItemRef(el, i)">
