@@ -10,7 +10,7 @@ const items: NavItem[] = [
   { label: "Услуги", target: "#services" },
   { label: "Преимущества", target: "#advantages" },
   { label: "Отзывы", target: "#reviews" },
-  { label: "FAQ", target: "#faq" },
+  { label: "Ответы", target: "#faq" },
   { label: "Контакты", target: "#contacts" },
 ];
 

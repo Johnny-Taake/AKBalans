@@ -7,7 +7,7 @@ const items: NavItem[] = [
   { label: "услуги", target: "#services" },
   { label: "преимущества", target: "#advantages" },
   { label: "отзывы", target: "#reviews" },
-  { label: "FAQ", target: "#faq" },
+  { label: "ответы", target: "#faq" },
   { label: "контакты", target: "#contacts" },
 ];
 
@@ -52,7 +52,7 @@ const navContainerRef = ref<HTMLElement | null>(null);
 const brandRef = ref<HTMLElement | null>(null);
 const needsBurger = ref(false);
 
-const WIDTH_TOLERANCE = 8;
+const WIDTH_TOLERANCE = 0;
 let resizeObs: ResizeObserver | null = null;
 let rafId: number | null = null;
 
@@ -151,7 +151,7 @@ onBeforeUnmount(() => {
 
         <nav
           ref="navRef"
-          :class="['flex items-center gap-7 text-base transition-opacity', needsBurger ? 'hidden' : 'hidden md:flex']"
+          :class="['flex items-center gap-7 text-base', needsBurger ? 'hidden' : 'hidden md:flex']"
         >
           <button
             v-for="it in items"

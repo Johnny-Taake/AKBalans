@@ -16,7 +16,7 @@ let headerEvtHandler: ((e: Event) => void) | null = null;
 let markerObserver: MutationObserver | null = null;
 
 function checkNarrowDisplay() {
-  isNarrowDisplay.value = window.innerWidth <= 768;
+  isNarrowDisplay.value = window.innerWidth < 768;
 }
 function readHeaderMarker() {
   hasHeaderBurger.value = document.documentElement.classList.contains("has-header-burger");
