@@ -23,7 +23,7 @@ import { isValidEmail } from "@/utils/email";
         </div>
 
         <div class="contacts__row">
-          <div class="contacts__label">E-MAIL:</div>
+          <div class="contacts__label">ЭЛ. ПОЧТА:</div>
           <div class="contacts__value">
             <a v-if="isValidEmail(CONTACTS.email)" class="contacts__link" :href="`mailto:${CONTACTS.email}`">
               {{ CONTACTS.email }}
