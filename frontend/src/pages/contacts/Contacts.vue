@@ -96,7 +96,6 @@ import { isValidEmail } from "@/utils/email";
   min-width: 0;
   min-height: 0;
   overflow-y: auto;
-  overscroll-behavior: contain;
   padding-bottom: 12px;
 }
 
